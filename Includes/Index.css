@@ -547,3 +547,13 @@ main .intro .head2 p::before {
         font-size: 20px;
     }
 }
+
+@media (max-width: 468px) and (max-height: 600px) {
+    main .intro .head2 p::before {
+        font-size: 5px;
+    }
+
+    main .intro .head2 p {
+        font-size: 5px;
+    }
+}
