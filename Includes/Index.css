@@ -550,10 +550,10 @@ main .intro .head2 p::before {
 
 @media (max-height: 900px) {
     main .intro .head2 p::before {
-        font-size: 5px;
+        font-size: 12px;
     }
 
     main .intro .head2 p {
-        font-size: 5px;
+        font-size: 12px;
     }
 }
