@@ -1,0 +1,553 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100vw;
+    height: auto;
+    background-image: url(../Assets/Images/ChicLightings.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: rgb(46, 46, 46);
+    box-shadow: 0 4px 30px rgb(70, 70, 70);
+    min-width: 100%;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+}
+
+header * {
+    color: aliceblue;
+}
+
+header .navMenu {
+    margin: 0 0 0 20%;
+    padding: 0 0 10px 0;
+    display: block;
+}
+
+header .navMenu ul {
+    display: flex;
+    list-style: none;
+}
+
+header .navMenu ul li {
+    margin: 0 1rem;
+    position: relative;
+    width: max-content;
+}
+
+header .navMenu ul li::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to right, orange, yellow);
+    border-radius: 100px;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 100ms;
+}
+
+header .navMenu ul li:hover::after {
+    width: 100%;
+}
+
+header .navMenu ul li a {
+    text-decoration: none;
+}
+
+header .navMenu ul li a span {
+    background: linear-gradient(to right, orange, yellow);
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: all 0.6s;
+}
+
+header .navMenu ul li:hover a span {
+    color: transparent;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    margin: 0 10%;
+    padding-bottom: 10px;
+}
+
+.container .logoLink {
+    border-radius: 50px;
+    overflow: hidden;
+    height: 60px;
+    z-index: 700;
+    /* Align the logo to the start */
+}
+
+.container .logoImg {
+    height: 100%;
+    border-radius: 50px;
+}
+
+.container .filter {
+    transition: all 0.3s ease-in;
+    cursor: default;
+    border-radius: 10px;
+    padding: 5px;
+    position: relative;
+    margin-left: 20px;
+}
+
+.container .filter h5::after {
+    content: ">";
+    margin-left: 5px;
+    font-size: 15px;
+    display: inline-block;
+    transition: all 0.2s ease-in;
+    color: aliceblue;
+}
+
+.container .filter .categMenu {
+    position: absolute;
+    display: none;
+    background-color: rgb(77, 77, 77);
+    width: max-content;
+    border-radius: 10px;
+    top: 40px;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.container .filter .categMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container .filter .categMenu ul li {
+    line-height: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+}
+
+.container .filter .categMenu ul li:hover {
+    background-color: orange;
+}
+
+.container .filter .categMenu ul li a {
+    text-decoration: none;
+    display: block;
+    padding: 0 50px 0 0;
+}
+
+.container .filter .categMenu ul li a span {
+    padding: 0 20px;
+}
+
+.container .filter .categMenu ul li:first-child {
+    border-top: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.container .filter .categMenu ul li:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.container .filter:hover h5::after {
+    transform: rotate(90deg);
+}
+
+.container .filter:hover {
+    background-color: #525252;
+}
+
+.container .searchBar {
+    margin: 0 10%;
+    border-radius: 10px;
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.container .searchBar .prodSearch {
+    border-radius: 10px;
+    outline-style: none;
+    border: none;
+    padding: 10px 40px;
+    width: 100%;
+    background-color: aliceblue;
+    color: #333333;
+    transition: all 0.3s ease-in;
+}
+
+.container .searchBar .prodSearch:hover {
+    box-shadow: gray 0 0 10px;
+}
+
+.container .searchBar .prodSearch:focus {
+    background-color: #333333;
+    border: 1px solid orange;
+    color: aliceblue;
+    box-shadow: orange 0 0 10px;
+}
+
+.container .searchBar svg {
+    cursor: pointer;
+    position: absolute;
+    fill: gray;
+    left: 10px;
+    transition: fill 0.3s ease-in-out;
+}
+
+@keyframes searchSVG {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.container .searchBar svg:hover {
+    animation: searchSVG 1s ease-in-out 0s infinite normal both;
+}
+
+.container .searchBar .prodSearch:focus~svg {
+    fill: aliceblue;
+}
+
+.container .user {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .user .menuToggle {
+    display: none;
+}
+
+.container .user .menuUser {
+    background-color: rgb(77, 77, 77);
+    padding: 10px 5px;
+    width: 150px;
+    display: none;
+    position: absolute;
+    left: -20px;
+    top: 60px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container .user .menuUser ul {
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.container .user .menuUser ul li {
+    line-height: 50px;
+    text-align: start;
+    display: block;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #333;
+}
+
+.container .user .menuUser ul li:hover {
+    background-color: orange;
+}
+
+.container .user .menuUser ul li a {
+    text-decoration: none;
+    display: block;
+    padding-left: 20px;
+    transition: all 0.3s;
+}
+
+.container .user .menuUser ul li:first-child {
+    border-top: none;
+}
+
+.container .user .menuUser ul li:last-child {
+    border-bottom: none;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+main .intro {
+    width: 100%;
+    height: calc(100vh - 124.7px);
+    background-color: rgba(51, 51, 51, 0.575);
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+main .intro * {
+    color: aliceblue;
+}
+
+main .intro .head1 {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: aliceblue;
+    width: 100%;
+    height: 30%;
+    flex-wrap: wrap;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    padding: 0 50px;
+    text-align: center;
+}
+
+main .intro .head2 {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding: 0 60px;
+}
+
+main .intro .head2 p {
+    line-height: 40px;
+    font-size: 23px;
+}
+
+main .intro .head2 p::before {
+    content: "\2B24";
+    margin-right: 10px;
+    font-size: 20px;
+    display: inline-block;
+    transition: all 0.2s ease-in;
+    /* Use background-clip and text-fill-color for gradient text */
+    background: linear-gradient(to bottom right, red, orange, yellow);
+    -webkit-background-clip: text;
+    /* For Safari */
+    background-clip: text;
+    color: transparent;
+    /* Hide original text */
+}
+
+
+/* Mobile Mode */
+
+.wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.wrapper .mobileNavBTN {
+    position: absolute;
+    top: 17px;
+    left: 12px;
+    height: 40px;
+    width: 40px;
+    z-index: 1000;
+    color: #ffffff;
+    background: #4a4a4a;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 23px;
+    transition: all 0.3s ease;
+}
+
+.wrapper .mobileNavBTN i {
+    font-size: 25px;
+    display: block;
+    text-align: center;
+    line-height: normal;
+    transition: all 0.3s;
+}
+
+#menuToggle:checked~.mobileNavBTN i::before {
+    content: "\2715";
+}
+
+.wrapper input[type="checkbox"]:checked~.mobileNavBTN {
+    left: 250px;
+}
+
+.wrapper input[type="checkbox"]:checked~.sidebar {
+    left: 0;
+}
+
+.wrapper .mobileNavBTN i {
+    color: aliceblue;
+    font-size: 25px;
+}
+
+.wrapper .sidebar {
+    width: 270px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -280px;
+    transition: all 0.3s ease;
+    /* Glassmorphism effect */
+    background: rgba(70, 70, 70, 0.658);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* Backdrop filter properties for different browsers */
+    backdrop-filter: blur(5.2px);
+    -webkit-backdrop-filter: blur(5.2px);
+    -moz-backdrop-filter: blur(5.2px);
+    /* For WebKit browsers */
+    border: 1px solid rgba(70, 70, 70, 0.3);
+    z-index: 999;
+}
+
+.wrapper .sidebar .title {
+    background: rgba(46, 46, 46, 0.37);
+    margin: 0;
+    padding: 10px 0;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    height: 80px;
+}
+
+.wrapper .sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+}
+
+.wrapper .sidebar ul li {
+    line-height: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #333;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+}
+
+.wrapper .sidebar ul li:hover {
+    box-shadow: 0 0 10px 3px #222;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.wrapper .sidebar ul li:first-child {
+    border-top: none;
+}
+
+.wrapper .sidebar ul li:last-child {
+    border-bottom: none;
+}
+
+.wrapper .sidebar ul li a {
+    text-decoration: none;
+    display: block;
+}
+
+@media (max-width: 1200px) {
+    header .navMenu {
+        margin: 0;
+    }
+
+    .container {
+        margin: 0;
+    }
+
+    .container .searchBar {
+        margin: 0 5%;
+    }
+
+    .container .user .menuUser {
+        left: -65px;
+    }
+}
+
+@media (max-width: 768px) {
+    header .navMenu {
+        display: none;
+    }
+
+    .container .filter {
+        display: none;
+    }
+
+    .container .searchBar {
+        display: none;
+    }
+
+    .container .user {
+        display: none;
+    }
+
+    .wrapper {
+        display: block;
+    }
+
+    main .intro {
+        height: calc(100vh - 88.8px);
+    }
+
+    main .intro .head1 {
+        font-size: 30px;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main .intro .head2 {
+        height: 50%;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+    }
+
+    main .intro .head2 p {
+        font-size: 20px;
+    }
+}
