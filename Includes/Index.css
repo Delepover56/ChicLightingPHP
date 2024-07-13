@@ -548,12 +548,12 @@ main .intro .head2 p::before {
     }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 750px) {
     main .intro .head2 p::before {
-        font-size: 12px;
+        font-size: 15px;
     }
 
     main .intro .head2 p {
-        font-size: 12px;
+        font-size: 15px;
     }
 }
