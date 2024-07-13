@@ -308,7 +308,7 @@ main {
 
 main .intro {
     width: 100%;
-    height: calc(100vh - 124.7px);
+    height: 100vh;
     background-color: rgba(51, 51, 51, 0.575);
     display: flex;
     justify-content: start;
@@ -526,10 +526,6 @@ main .intro .head2 p::before {
 
     .wrapper {
         display: block;
-    }
-
-    main .intro {
-        height: calc(100vh - 88.8px);
     }
 
     main .intro .head1 {
